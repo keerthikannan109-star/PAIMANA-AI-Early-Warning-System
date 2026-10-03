@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        PAIMANA AI | Predictive Monitoring
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                AI
+            </div>
+
+            <div>
+
+                <h2>
+                    PAIMANA AI
+                </h2>
+
+                <span>
+                    Smart Monitoring
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+            <a
+                href="#"
+                class="nav-item active"
+            >
+
+                <span>▣</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span>⚠</span>
+
+                Risk Monitor
+
+            </a>
+
+
+            <a
+                href="#projects"
+                class="nav-item"
+            >
+
+                <span>▤</span>
+
+                Projects
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span>◈</span>
+
+                Analytics
+
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span>✦</span>
+
+                AI Insights
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                AI System Online
+
+            </div>
+
+
+            <small>
+
+                Predictive Monitoring Engine
+
+            </small>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <h1>
+                    Predictive Infrastructure Monitoring
+                </h1>
+
+                <p>
+                    AI-powered early warning and project risk intelligence
+                </p>
+
+            </div>
+
+
+            <div class="header-status">
+
+                <span class="live-dot"></span>
+
+                <span>
+                    Live Monitoring
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================= -->
+        <!-- KPI CARDS -->
+        <!-- ================================= -->
+
+        <section class="kpi-grid">
+
+
+            <!-- TOTAL PROJECTS -->
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+
+                    <span class="kpi-label">
+                        Total Projects
+                    </span>
+
+                    <span class="kpi-icon">
+                        ▤
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    {{ total_projects }}
+                </h2>
+
+
+                <p>
+                    Projects monitored by PAIMANA AI
+                </p>
+
+            </div>
+
+
+
+            <!-- CRITICAL -->
+
+            <div class="kpi-card critical-card">
+
+                <div class="kpi-top">
+
+                    <span class="kpi-label">
+                        Critical Risk
+                    </span>
+
+                    <span class="kpi-icon">
+                        !
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    {{ critical_projects }}
+                </h2>
+
+
+                <p>
+                    Immediate attention required
+                </p>
+
+            </div>
+
+
+
+            <!-- HIGH -->
+
+            <div class="kpi-card high-card">
+
+                <div class="kpi-top">
+
+                    <span class="kpi-label">
+                        High Risk
+                    </span>
+
+                    <span class="kpi-icon">
+                        ▲
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    {{ high_projects }}
+                </h2>
+
+
+                <p>
+                    Early intervention recommended
+                </p>
+
+            </div>
+
+
+
+            <!-- AVERAGE RISK -->
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+
+                    <span class="kpi-label">
+                        Average Risk Score
+                    </span>
+
+                    <span class="kpi-icon">
+                        ◉
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    {{ average_risk }}
+                </h2>
+
+
+                <p>
+                    Overall project risk index
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- MAIN GRID -->
+        <!-- ================================= -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- ================================= -->
+            <!-- RISK OVERVIEW -->
+            <!-- ================================= -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Risk Overview
+                        </h2>
+
+                        <p>
+                            Current AI-predicted project risk distribution
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-bars">
+
+
+                    <!-- CRITICAL -->
+
+                    <div class="risk-row">
+
+                        <div class="risk-title">
+
+                            <span
+                                class="risk-indicator critical"
+                            ></span>
+
+                            Critical
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill critical-fill"
+                                style="width: {{ critical_percent }}%;"
+                            ></div>
+
+                        </div>
+
+
+                        <strong>
+                            {{ critical_projects }}
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- HIGH -->
+
+                    <div class="risk-row">
+
+                        <div class="risk-title">
+
+                            <span
+                                class="risk-indicator high"
+                            ></span>
+
+                            High
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill high-fill"
+                                style="width: {{ high_percent }}%;"
+                            ></div>
+
+                        </div>
+
+
+                        <strong>
+                            {{ high_projects }}
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- MEDIUM -->
+
+                    <div class="risk-row">
+
+                        <div class="risk-title">
+
+                            <span
+                                class="risk-indicator medium"
+                            ></span>
+
+                            Medium
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill medium-fill"
+                                style="width: {{ medium_percent }}%;"
+                            ></div>
+
+                        </div>
+
+
+                        <strong>
+                            {{ medium_projects }}
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- LOW -->
+
+                    <div class="risk-row">
+
+                        <div class="risk-title">
+
+                            <span
+                                class="risk-indicator low"
+                            ></span>
+
+                            Low
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill low-fill"
+                                style="width: {{ low_percent }}%;"
+                            ></div>
+
+                        </div>
+
+
+                        <strong>
+                            {{ low_projects }}
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- AI INSIGHT -->
+            <!-- ================================= -->
+
+            <div class="panel ai-panel">
+
+                <div class="ai-badge">
+                    AI INSIGHT
+                </div>
+
+
+                <h2>
+                    Predictive Risk Engine
+                </h2>
+
+
+                <p>
+                    XGBoost models analyze project characteristics
+                    to identify potential cost and schedule risks
+                    before they materialize.
+                </p>
+
+
+                <!-- AI PROCESS -->
+
+                <div class="ai-flow">
+
+
+                    <div>
+
+                        <span>
+                            01
+                        </span>
+
+                        PAIMANA Data
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            02
+                        </span>
+
+                        XGBoost Prediction
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            03
+                        </span>
+
+                        Risk Score
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            04
+                        </span>
+
+                        Early Warning
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- AI CAPABILITIES -->
+
+                <div class="ai-capabilities">
+
+
+                    <!-- COST RISK -->
+
+                    <div class="ai-capability">
+
+                        <strong>
+                            Cost Risk
+                        </strong>
+
+                        <span>
+                            Predict potential cost escalation
+                        </span>
+
+                    </div>
+
+
+                    <!-- TIME RISK -->
+
+                    <div class="ai-capability">
+
+                        <strong>
+                            Time Risk
+                        </strong>
+
+                        <span>
+                            Detect possible schedule delays
+                        </span>
+
+                    </div>
+
+
+                    <!-- RISK SCORE -->
+
+                    <div class="ai-capability">
+
+                        <strong>
+                            Risk Score
+                        </strong>
+
+                        <span>
+                            Convert predictions into a project risk index
+                        </span>
+
+                    </div>
+
+
+                    <!-- EARLY WARNING -->
+
+                    <div class="ai-capability">
+
+                        <strong>
+                            Early Warning
+                        </strong>
+
+                        <span>
+                            Highlight projects requiring attention
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- PROJECT MONITORING -->
+        <!-- ================================= -->
+
+        <section
+            class="panel project-panel"
+            id="projects"
+        >
+
+
+            <div class="panel-header">
+
+
+                <div>
+
+                    <h2>
+                        Project Risk Monitoring
+                    </h2>
+
+                    <p>
+                        AI-generated risk intelligence for infrastructure projects
+                    </p>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="project-filters">
+
+
+                    <input
+                        type="text"
+                        id="projectSearch"
+                        placeholder="Search project..."
+                    >
+
+
+                    <select id="sectorFilter">
+
+                        <option value="">
+                            All Sectors
+                        </option>
+
+
+                        {% for sector in projects | map(attribute='sector') | unique | sort %}
+
+                        <option value="{{ sector }}">
+
+                            {{ sector }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+
+                    <select id="riskFilter">
+
+                        <option value="">
+                            All Risk Levels
+                        </option>
+
+                        <option value="Critical">
+                            Critical
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- PROJECT TABLE -->
+            <!-- ================================= -->
+
+            <div class="table-container">
+
+                <table class="project-table" id="projectRiskTable"></table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Project
+                            </th>
+
+                            <th>
+                                Ministry
+                            </th>
+
+                            <th>
+                                Sector
+                            </th>
+
+                            <th>
+                                Original Cost
+                            </th>
+
+                            <th>
+                                Revised Cost
+                            </th>
+
+                            <th>
+                                Expenditure
+                            </th>
+
+                            <th>
+                                Expected Completion
+                            </th>
+
+                            <th>
+                                Risk Score
+                            </th>
+
+                            <th>
+                                Risk Level
+                            </th>
+
+                            <th>
+                                Cost Risk
+                            </th>
+
+                            <th>
+                                Time Risk
+                            </th>
+
+                            <th>
+                                Early Warning
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody>
+
+
+                        {% for project in projects %}
+
+                        <tr>
+
+
+                            <!-- PROJECT -->
+
+                            <td>
+
+                                <a
+                                    href="#"
+                                    class="project-name project-link"
+
+                                    data-project="{{ project.project_code }}"
+
+                                    data-original-cost="{{ project.original_cost_cr }}"
+
+                                    data-revised-cost="{{ project.revised_cost_cr }}"
+
+                                    data-expenditure="{{ project.expenditure_cr }}"
+
+                                    data-original-date="{{ project.original_end_date }}"
+
+                                    data-revised-date="{{ project.revised_end_date }}"
+                                >
+
+                                    {{ project.project_name }}
+
+                                </a>
+
+
+                                <span class="project-code">
+
+                                    Project Code:
+                                    {{ project.project_code }}
+
+                                </span>
+
+                            </td>
+
+
+
+                            <!-- MINISTRY -->
+
+                            <td>
+
+                                {{ project.ministry }}
+
+                            </td>
+
+
+
+                            <!-- SECTOR -->
+
+                            <td>
+
+                                {{ project.sector }}
+
+                            </td>
+
+
+
+                            <!-- ORIGINAL COST -->
+
+                            <td>
+
+                                ₹{{ project.original_cost_cr }} Cr
+
+                            </td>
+
+
+
+                            <!-- REVISED COST -->
+
+                            <td>
+
+                                ₹{{ project.revised_cost_cr }} Cr
+
+                            </td>
+
+
+
+                            <!-- EXPENDITURE -->
+
+                            <td>
+
+                                ₹{{ project.expenditure_cr }} Cr
+
+                            </td>
+
+
+
+                            <!-- EXPECTED COMPLETION -->
+
+                            <td>
+
+                                {{ project.revised_end_date }}
+
+                            </td>
+
+
+
+                            <!-- RISK SCORE -->
+
+                            <td>
+
+                                <strong class="risk-score">
+
+                                    {{ project.risk_score }}
+
+                                </strong>
+
+                            </td>
+
+
+
+                            <!-- RISK LEVEL -->
+
+                            <td>
+
+                                <span
+                                    class="risk-badge {{ project.risk_level|lower }}"
+                                >
+
+                                    {{ project.risk_level }}
+
+                                </span>
+
+                            </td>
+
+
+
+                            <!-- COST RISK -->
+
+                            <td>
+
+                                <div class="risk-percentage">
+
+                                    {{ project.cost_risk_probability }}%
+
+                                </div>
+
+                            </td>
+
+
+
+                            <!-- TIME RISK -->
+
+                            <td>
+
+                                <div class="risk-percentage">
+
+                                    {{ project.time_risk_probability }}%
+
+                                </div>
+
+                            </td>
+
+
+
+                            <!-- EARLY WARNING -->
+
+                            <td>
+
+                                <span class="warning-text">
+
+                                    {{ project.early_warning }}
+
+                                </span>
+
+                            </td>
+
+
+                        </tr>
+
+                        {% endfor %}
+
+
+                    </tbody>
+
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- FOOTER -->
+        <!-- ================================= -->
+
+        <footer class="dashboard-footer">
+
+
+            <span>
+
+                PAIMANA AI Predictive Monitoring System
+
+            </span>
+
+
+            <span>
+
+                Powered by Machine Learning & Explainable AI
+
+            </span>
+
+
+        </footer>
+        <!-- ========================================= -->
+<!-- AI ANALYTICS -->
+<!-- ========================================= -->
+
+<section class="analytics-section">
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>AI Analytics</h2>
+
+                <p>
+                    Predictive insights generated from PAIMANA project data
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="analytics-grid">
+
+
+            <!-- COST RISK -->
+
+            <div class="analytics-card">
+
+                <span>
+                    Average Cost Risk
+                </span>
+
+                <strong>
+                    {{ average_cost_risk }}%
+                </strong>
+
+                <small>
+                    Predicted cost escalation risk
+                </small>
+
+            </div>
+
+
+            <!-- TIME RISK -->
+
+            <div class="analytics-card">
+
+                <span>
+                    Average Time Risk
+                </span>
+
+                <strong>
+                    {{ average_time_risk }}%
+                </strong>
+
+                <small>
+                    Predicted schedule delay risk
+                </small>
+
+            </div>
+
+
+            <!-- COST WARNING -->
+
+            <div class="analytics-card">
+
+                <span>
+                    Cost Warnings
+                </span>
+
+                <strong>
+                    {{ cost_warning_projects }}
+                </strong>
+
+                <small>
+                    Projects above warning threshold
+                </small>
+
+            </div>
+
+
+            <!-- TIME WARNING -->
+
+            <div class="analytics-card">
+
+                <span>
+                    Time Warnings
+                </span>
+
+                <strong>
+                    {{ time_warning_projects }}
+                </strong>
+
+                <small>
+                    Projects above warning threshold
+                </small>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================= -->
+    <!-- TOP RISK PROJECTS -->
+    <!-- ========================================= -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <h2>
+                    Top Risk Projects
+                </h2>
+
+                <p>
+                    Projects with the highest predicted risk scores
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table class="project-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Project
+                        </th>
+
+                        <th>
+                            Sector
+                        </th>
+
+                        <th>
+                            Risk Score
+                        </th>
+
+                        <th>
+                            Risk Level
+                        </th>
+
+                        <th>
+                            Cost Risk
+                        </th>
+
+                        <th>
+                            Time Risk
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for project in top_risk_projects %}
+
+                    <tr>
+
+                        <td>
+                            {{ project.project_name }}
+                        </td>
+
+                        <td>
+                            {{ project.sector }}
+                        </td>
+
+                        <td>
+                            <strong>
+                                {{ project.risk_score }}
+                            </strong>
+                        </td>
+
+                        <td>
+
+                            <span
+                                class="risk-badge {{ project.risk_level|lower }}"
+                            >
+                                {{ project.risk_level }}
+                            </span>
+
+                        </td>
+
+                        <td>
+                            {{ project.cost_risk_probability }}%
+                        </td>
+
+                        <td>
+                            {{ project.time_risk_probability }}%
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- ========================================= -->
+<!-- PROJECT INTELLIGENCE MODAL -->
+<!-- ========================================= -->
+
+<div
+    id="projectModal"
+    class="project-modal"
+>
+
+
+    <div class="project-modal-content">
+
+
+        <!-- CLOSE BUTTON -->
+
+        <button
+            class="modal-close"
+            id="closeProjectModal"
+        >
+
+            ×
+
+        </button>
+
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="modal-header">
+
+
+            <span class="ai-badge">
+
+                PROJECT INTELLIGENCE
+
+            </span>
+
+
+            <h2 id="modalProjectName">
+
+                Project Name
+
+            </h2>
+
+
+            <p id="modalProjectCode">
+
+                Project Code
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- RISK CARDS -->
+
+        <div class="modal-grid">
+
+
+            <div class="detail-card">
+
+                <span>
+                    Risk Score
+                </span>
+
+                <strong id="modalRiskScore">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span>
+                    Risk Level
+                </span>
+
+                <strong id="modalRiskLevel">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span>
+                    Cost Risk
+                </span>
+
+                <strong id="modalCostRisk">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span>
+                    Time Risk
+                </span>
+
+                <strong id="modalTimeRisk">
+                    -
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PROJECT INFORMATION -->
+
+        <div class="detail-section">
+
+
+            <h3>
+                Project Information
+            </h3>
+
+
+            <p>
+
+                <strong>
+                    Ministry:
+                </strong>
+
+                <span id="modalMinistry"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Sector:
+                </strong>
+
+                <span id="modalSector"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Original Cost:
+                </strong>
+
+                ₹<span id="modalOriginalCost"></span> Cr
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Revised Cost:
+                </strong>
+
+                ₹<span id="modalRevisedCost"></span> Cr
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Expenditure Till Date:
+                </strong>
+
+                ₹<span id="modalExpenditure"></span> Cr
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Original Completion Date:
+                </strong>
+
+                <span id="modalOriginalDate"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Expected Completion:
+                </strong>
+
+                <span id="modalRevisedDate"></span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Cost Change:
+                </strong>
+
+                <span id="modalCostChange"></span>%
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Schedule Delay:
+                </strong>
+
+                <span id="modalDelayDays"></span> days
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- EARLY WARNING -->
+
+        <div class="warning-section">
+
+
+            <h3>
+
+                ⚠ Early Warning
+
+            </h3>
+
+
+            <p id="modalWarning">
+
+                -
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ========================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================= -->
+
+<script
+    src="{{ url_for('static', filename='js/filters.js') }}"
+></script>
+
+
+</body>
+
+</html>
